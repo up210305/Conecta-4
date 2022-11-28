@@ -8,7 +8,7 @@ int gamemode; //seleccion para escojer singleplayer o localmode
 //funciones para main
 
 int main(){
-    int segundos;
+    
 
     // mostrar mensajes de bienvenida   
     cout << "\033[0;35m" << "\t \t \t \t Welcome to the game CONNECT 4 \n" << "\033[0m";
