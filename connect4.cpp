@@ -265,3 +265,8 @@ void loading(){
     std::cout<<"\e[?25h\n\n";
     return;
 }
+
+int computer_mark()
+{
+    return (rand()%10);
+}
