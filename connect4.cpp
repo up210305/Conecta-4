@@ -87,12 +87,12 @@ int main(){
         
             if (turn % 2 == 0)          //determining the turn
             {
-                cout << "It's Player1's turn!" << endl ;
+                cout <<"\033[1;32m"<< "It's Player1's turn!" << endl ;
                 marker = 'O' ;          //determining the marker
             }
             if (turn % 2 == 1)
             {
-                cout << "It's Player2's turn!" << endl ;
+                cout << "\033[0;31m"<< "It's Player2's turn!" << endl ;
                 marker = 'X' ;
             }
             //--------------------------------------------------------------------------------------------
@@ -104,13 +104,13 @@ int main(){
                 cin >>  choice ;              //player makes a move
                 if (choice < 1 || choice > 8)
                 {
-                    cout << "Nope. Pick a number between 1 - 7." << endl ;
+                    cout <<"\033[1;30m"<< "Nope. Pick a number between 1 - 7." << endl ;
                     onboard = false ;
                 }
                 col = choice ;
                 if (colfilled[7-col])
                 {
-                    cout << "Don't go over the board" << endl ;
+                    cout <<"\033[1;30m"<< "Don't go over the board" << endl ;
                     onboard = false;
                 }
             }
@@ -127,8 +127,9 @@ int main(){
             }
             system ("clear");
             //------------------------------------------------------------------------------------------
-            drawing_board();
-            cout << " " << " " << "1" << " " << " "  << " " << "2" << " " << " " << " "  << "3" << " " << " " << " "  << "4" << " " << " " << " "  << "5" << " " << " " << " "  << "6" << " " << " " << " "  << "7" ;
+            drawing_board();                    //draw the board
+
+            cout<<"\033[0;31m" << " " << " " << "1" << " " << " "  << " " << "2" << " " << " " << " "  << "3" << " " << " " << " "  << "4" << " " << " " << " "  << "5" << " " << " " << " "  << "6" << " " << " " << " "  << "7" ;
             cout << endl  ;
             //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             for (row = 7; row != -1; row--)         //TO DETERMINE IF IT IS A WINNING BOARD
@@ -139,11 +140,11 @@ int main(){
                     {
                         if ( turn % 2 == 0)       //declaring winner
                         {
-                            cout << "Player 1 has won!" << endl ;
+                            cout <<"\033[1;32m"<< "Player 1 has won!" << endl ;
                         }
                         else
                         {
-                            cout << "Player 2 has won!" << endl ;
+                            cout << "\033[0;31m"<< "Player 2 has won!" << endl ;
                         }
                         return(0) ;
                     }
@@ -151,11 +152,11 @@ int main(){
                     {
                         if ( turn % 2 == 0)       //declaring winner
                         {
-                            cout << "Player 1 has won!" << endl ;
+                            cout <<"\033[1;32m" << "Player 1 has won!" << endl ;
                         }
                         else
                         {
-                            cout << "Player 2 has won!" << endl ;
+                            cout << "\033[0;31m"<< "Player 2 has won!" << endl ;
                         }
                         return(0) ;
                     }
@@ -164,11 +165,11 @@ int main(){
                     {
                         if ( turn % 2 == 0)       //declaring winner
                         {
-                            cout << "Player 1 has won!" << endl ;
+                            cout <<"\033[1;32m"<< "Player 1 has won!" << endl ;
                         }
                         else
                         {
-                            cout << "Player 2 has won!" << endl ;
+                            cout << "\033[0;31m"<< "Player 2 has won!" << endl ;
                         }
                         return(0) ;
                     }
@@ -177,11 +178,11 @@ int main(){
                     {
                         if ( turn % 2 == 0)       //declaring winner
                         {
-                            cout << "Player 1 has won!" << endl ;
+                            cout <<"\033[1;32m"<< "Player 1 has won!" << endl ;
                         }
                         else
                         {
-                            cout << "Player 2 has won!" << endl ;
+                            cout << "\033[0;31m"<< "Player 2 has won!" << endl ;
                         }
                         return(0) ;
                     }
@@ -249,6 +250,7 @@ void loading(){
         break;
         if (c == 7)
             c = 0;
+            // sequences to loading screen https://unicode-table.com/en/blocks/braille-patterns/
             std::cout << fcolor[c] << "\e[?25l\r\t\t   \u280B" << std::flush<<"               ";
         std::this_thread::sleep_for(0.10s);
         std::cout << "\r\t\t   \u2819" << std::flush<<"               ";
@@ -260,8 +262,10 @@ void loading(){
         std::cout << "\r\t\t   \u2826" << std::flush<<"               ";
         std::this_thread::sleep_for(0.10s);
         std::cout << "\r\t\t   \u2807\033[0m" << std::flush<<"               ";
-        std::this_thread::sleep_for(0.10s);
+        std::this_thread::sleep_for(0.10s); // deja congelado el ciclo x seg
     }
+    std::cout << "\r\t\t   \u2705\033[0m" << std::flush<<"               ";
+    std::this_thread::sleep_for(1s);
     std::cout<<"\e[?25h\n\n";
     return;
 }
