@@ -123,27 +123,27 @@ gcc connect4.c -o connect4
 
 First, the program shows you an animation that simulate a loading screen in a game. 
 
-<img src="./imagenes/c1.PNG" align="center"/>
+<img src="./imagenes/cp1.png" align="center"/>
 
 Second, When the time finished, the program shows you a menu with the existing game modes that you can play. 
 
-<img src="./imagenes/c2.PNG" align="center"/>
+<img src="./imagenes/cp2.png" align="center"/>
 
-After selecting the second option, a board will appear where we can enter the moves. 
+After selecting the first option, a board will appear where we can enter the moves. 
 
-<img src="./imagenes/c3.PNG"  align="center"/>
+<img src="./imagenes/cp3.png"  align="center"/>
 
 Then a game will start. First the player starts on square 1.
 
-<img src="./imagenes/c4.PNG" align="center"/>
+<img src="./imagenes/cp4.png" align="center"/>
 
 Then in the second move the player 2 chose square 2.  
 
-<img src="./imagenes/c5.PNG" align="center"/>
+<img src="./imagenes/cp5.png" align="center"/>
 
-After several moves as you can see the player 2 wons the game.
+After several moves as you can see the player 1 wons the game. 
 
-<img src="./imagenes/c6.PNG" align="center"/>
+<img src="./imagenes/cp6.png" align="center"/>
 
 
 
